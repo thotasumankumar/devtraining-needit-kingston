@@ -2,6 +2,13 @@
 <database>
     <element audit="true" extends="task" label="NeedIt" max_length="40" name="x_58872_needit_needit" type="collection">
         <element label="New field 1" max_length="40" name="new_field_1" type="string"/>
+        <element attributes="edge_encryption_enabled=true" choice="1" label="Country" mandatory="true" max_length="40" name="u_country" type="string">
+            <choice>
+                <element label="India" sequence="0" value="india"/>
+                <element label="Us" sequence="1" value="us"/>
+                <element label="Uk" sequence="2" value="uk"/>
+            </choice>
+        </element>
         <element label="Requested for" mandatory="true" max_length="32" name="u_requested_for" reference="sys_user" type="reference"/>
         <element attributes="edge_encryption_enabled=true" choice="3" default="legal" label="Request type" mandatory="true" max_length="40" name="u_request_type" type="string">
             <choice>
@@ -9,6 +16,9 @@
                 <element label="Facilities" sequence="1" value="facilities"/>
                 <element label="Legal" sequence="2" value="legal"/>
             </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true" choice="1" dependent="u_country" dependent_on_field="u_country" label="State" max_length="40" name="u_state" type="string" use_dependent_field="true">
+            <choice/>
         </element>
         <element attributes="edge_encryption_enabled=true" choice="3" default="legal1" label="What needed" mandatory="true" max_length="40" name="u_what_needed" type="string">
             <choice>
