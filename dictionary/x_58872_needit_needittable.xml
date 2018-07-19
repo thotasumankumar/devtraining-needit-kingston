@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element extends="task" label="NeedItTable" max_length="40" name="x_58872_needit_needittable" type="collection">
+        <element label="NewFieldTest" max_length="40" name="newfieldtest" type="integer"/>
+        <element attributes="edge_encryption_enabled=true" choice="1" default="india" label="Country" max_length="40" name="u_country" type="string">
+            <choice>
+                <element label="United Stated" sequence="0" value="united stated"/>
+                <element label="India" sequence="1" value="india"/>
+                <element label="Australia" sequence="2" value="australia"/>
+            </choice>
+        </element>
+        <element label="When needed" mandatory="true" max_length="40" name="u_glide_date_time_1" type="glide_date_time"/>
+        <element label="Requested for" mandatory="true" max_length="32" name="u_requested_for" reference="sys_user" type="reference"/>
+    </element>
+</database>
